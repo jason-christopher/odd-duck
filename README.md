@@ -1,22 +1,15 @@
-# Code-201-Template
-Template for setting up projects
+# Lab 11 - Odd Duck Products
 
+## Odd Duck Products
 
+This app is designed to show a number of images and the user selects their favorite in order to calculate the most popular images.
 
-## Follow this template for the README files:
-
-# LAB - Number
-
-## Project Name
-
-I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
-
-### Author: Student/Group Name
+### Author: Jason Christopher
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* Any Links you used as reference
+
+* Images from class Repo 
 
 ### Reflections and Comments
-* Consider including the answers to your daily journal and submission questions here
-* This is also a good place to reflect on the tools and resources used and learned
+
+* N/A
