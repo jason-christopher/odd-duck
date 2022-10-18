@@ -26,18 +26,20 @@ h1{
 }
 
 main{
-  display: flex;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-image: linear-gradient(aquamarine, rgb(243, 222, 106), aquamarine);
 }
 
-#leftSection{
+/* #leftSection{
   width: 20%;
   text-align: center;
   border: 1px solid black;
   border-radius: 5px 0 0 5px;
   background-image: linear-gradient(red, gold, red);
-}
+} */
 
-h2{
+/* h2{
   font-family: 'Oregano';
   font-size: 29px;
   color: gold;
@@ -61,27 +63,20 @@ li:nth-child(odd){
 li:nth-child(even){
   color: blue;
   text-shadow: none;
-}
-
-
-#rightSection{
-  width: 80%;
-  border: 1px solid black;
-  border-radius: 0 5px 5px 0;
-  background-image: linear-gradient(aquamarine, rgb(243, 222, 106), aquamarine);
-}
+} */
 
 #imageDiv{
   display: grid;
-  grid-template-columns: 300px 300px 300px;
+  grid-template-columns: 380px 380px 380px;
   column-gap: 20px;
   row-gap: 10px;
-  align-items: center;                                 
+  align-items: center;
+  margin-top: 10px;                          
 }
 
 #imageDiv img{
   width: 100%;
-  height: 300px;
+  height: 380px;
   margin: 5px;
   object-fit: contain;
   background-color: white;
@@ -96,14 +91,14 @@ li:nth-child(even){
 
 #imageDiv img:active{
   border: 4px dashed red;
-  opacity: 1;
 }
 
 article p{
   font-family: 'Viaoda Libre';
-  font-size: 30px;
+  font-size: 40px;
   padding: 20px 10px;
   font-weight: bold;
+  text-align: center;
 }
 
 #buttonDiv{
@@ -113,8 +108,8 @@ article p{
 
 #button{
   font-family: 'Henny Penny';
-  font-size: 20px;
-  font-style: normal;
+  font-size: 30px;
+  vertical-align: middle;
   width: 200px;
   margin: 5px;
   text-align: center;
@@ -134,6 +129,15 @@ article p{
 #button:active{
   color: black;
   border: 2px solid black;
+}
+
+#chartArea{
+  width: 90%;
+  margin: 10px auto;
+}
+
+#myChart{
+  font-family: 'Henny Penny';
 }
 
 footer{
