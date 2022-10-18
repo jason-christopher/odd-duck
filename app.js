@@ -1,7 +1,7 @@
 'use strict'
 
 let rounds = 0;
-let maxRounds = 3;
+let maxRounds = 25;
 let allImgs = [];
 let numOfImgs = 3;
 let imageDiv = document.getElementById('imageDiv');
