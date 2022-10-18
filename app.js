@@ -7,6 +7,7 @@ let numOfImgs = 3;
 let imageDiv = document.getElementById('imageDiv');
 let button = document.getElementById('button');
 let results = document.querySelector('ul');
+let insertText = document.getElementById('insertText');
 
 function Image(name, fileExt = '.jpeg') {
   this.name = name;
@@ -55,6 +56,13 @@ function render(){
       imageDiv.appendChild(image);
       allImgs[randomNum].views++;
     }
+  }
+  if(rounds < maxRounds - 1) {
+    insertText.innerText = `After ${maxRounds-rounds} more selections, you may use the button below to display the results.`;
+  } else if ((maxRounds-rounds) === 1) {
+    insertText.innerText = `After ${maxRounds-rounds} more selection, you may use the button below to display the results.`;
+  } else {
+    insertText.innerText = 'You may now use the button below to display the results.';
   }
 }
 
