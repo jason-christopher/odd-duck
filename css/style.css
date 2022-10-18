@@ -1,0 +1,151 @@
+body{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header{
+  display: flex;
+  background-image: linear-gradient(to right, blue, cyan, blue);
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+header img{
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+}
+
+h1{
+  font-family: 'Henny Penny';
+  font-size: 70px;
+  color: gold;
+  text-shadow: black 3px 3px 3px;
+}
+
+main{
+  display: flex;
+}
+
+#leftSection{
+  width: 20%;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px 0 0 5px;
+  background-image: linear-gradient(red, gold, red);
+}
+
+h2{
+  font-family: 'Oregano';
+  font-size: 29px;
+  color: gold;
+  text-shadow: black 2px 2px 2px;
+  padding: 5px;
+}
+
+li{
+  font-family: 'Viaoda Libre';
+  font-size: 25px;
+  text-shadow: black 1px 1px 1px;
+  padding: 3px;
+  font-weight: bold;
+}
+
+li:nth-child(odd){
+  color: cyan;
+  text-shadow: black 1px 1px 1px;
+}
+
+li:nth-child(even){
+  color: blue;
+  text-shadow: none;
+}
+
+
+#rightSection{
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 0 5px 5px 0;
+  background-image: linear-gradient(aquamarine, rgb(243, 222, 106), aquamarine);
+}
+
+#imageDiv{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  flex-wrap: wrap;
+}
+
+#imageDiv img{
+  width: 30%;
+  height: 300px;
+  margin: 5px;
+  object-fit: contain;
+  background-color: white;
+  border: 4px dashed grey;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#imageDiv img:hover{
+  border: 4px solid red;
+}
+
+#imageDiv img:active{
+  border: 4px dashed red;
+  opacity: 1;
+}
+
+article p{
+  font-family: 'Viaoda Libre';
+  font-size: 30px;
+  padding: 20px 10px;
+  font-weight: bold;
+}
+
+#buttonDiv{
+  display: flex;
+  justify-content: space-around;
+}
+
+#button{
+  font-family: 'Henny Penny';
+  font-size: 20px;
+  font-style: normal;
+  width: 200px;
+  margin: 5px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: red;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+#button:hover{
+  color: white;
+  border: 2px solid white;
+  text-shadow: black 1px 1px 1px;
+}
+
+#button:active{
+  color: black;
+  border: 2px solid black;
+}
+
+footer{
+  border: 1px solid black;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, blue, cyan, blue);
+}
+
+footer p{
+  font-size: 30px;
+  font-family: 'Oregano';
+  text-align: center;
+  color: gold;
+  margin: 20px auto;
+  text-shadow: black 2px 2px 2px;
+}
