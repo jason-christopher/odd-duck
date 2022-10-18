@@ -72,14 +72,15 @@ li:nth-child(even){
 }
 
 #imageDiv{
-  display: flex;
-  justify-content: space-between;
-  margin: 5px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  column-gap: 20px;
+  row-gap: 10px;
+  align-items: center;                                 
 }
 
 #imageDiv img{
-  width: 30%;
+  width: 100%;
   height: 300px;
   margin: 5px;
   object-fit: contain;

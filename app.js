@@ -1,5 +1,7 @@
 'use strict'
 
+// Global Variables
+
 let rounds = 0;
 let maxRounds = 25;
 let allImgs = [];
@@ -8,6 +10,8 @@ let imageDiv = document.getElementById('imageDiv');
 let button = document.getElementById('button');
 let results = document.querySelector('ul');
 let insertText = document.getElementById('insertText');
+
+// Constructor Function
 
 function Image(name, fileExt = '.jpeg') {
   this.name = name;
@@ -20,6 +24,8 @@ function Image(name, fileExt = '.jpeg') {
   }
   this.addToArray();
 }
+
+// Image Inputs
 
 let bag = new Image('bag');
 let banana = new Image('banana');
@@ -40,6 +46,8 @@ let tauntaun = new Image('tauntaun');
 let unicorn = new Image('unicorn');
 let waterCan = new Image('water-can');
 let wineGlass = new Image('wine-glass');
+
+// Render Function
 
 function render(){
   let imgCounter = 0;
@@ -68,6 +76,8 @@ function render(){
 
 render();
 
+// Voting Event Listener
+
 let handleClick = function(event){
   event.preventDefault();
   let winner = event.target.alt;
@@ -92,6 +102,8 @@ let handleClick = function(event){
 }
 
 imageDiv.addEventListener('click', handleClick);
+
+// Results Event Listener
 
 function renderResults() {
   let existingLI = document.querySelectorAll('li');
