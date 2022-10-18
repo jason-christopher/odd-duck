@@ -70,7 +70,8 @@ li:nth-child(even){
   grid-template-columns: 380px 380px 380px;
   column-gap: 20px;
   row-gap: 10px;
-  align-items: center;                             
+  align-items: center;
+  margin-top: 10px;                          
 }
 
 #imageDiv img{
@@ -90,14 +91,14 @@ li:nth-child(even){
 
 #imageDiv img:active{
   border: 4px dashed red;
-  opacity: 1;
 }
 
 article p{
   font-family: 'Viaoda Libre';
-  font-size: 30px;
+  font-size: 40px;
   padding: 20px 10px;
   font-weight: bold;
+  text-align: center;
 }
 
 #buttonDiv{
@@ -133,9 +134,10 @@ article p{
 #chartArea{
   width: 90%;
   margin: 10px auto;
-  /* background-image: linear-gradient(to right, red, gold, red);
-  border: 1px solid black;
-  border-radius: 5px; */
+}
+
+#myChart{
+  font-family: 'Henny Penny';
 }
 
 footer{

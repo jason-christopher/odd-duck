@@ -5,7 +5,7 @@
 let rounds = 0;
 let maxRounds = 3;
 let allImgs = [];
-let numOfImgs = 3;
+let numOfImgs = 25;
 let imageDiv = document.getElementById('imageDiv');
 let button = document.getElementById('button');
 let results = document.querySelector('ul');
@@ -132,18 +132,28 @@ function renderResults() {
       datasets: [
         {
           label: '# of Votes',
-          backgroundColor: 'blue',
+          backgroundColor: 'rgba(255, 99, 132, 0.5)',
+          borderColor: 'rgb(255, 99, 132)',
           data: yValuesVotes,
+          borderWidth: 2,
+          borderRadius: 5,
         },
         {
           label: '# of Views',
-          backgroundColor: 'gold',
-          data: yValuesViews
+          backgroundColor: 'rgba(54, 162, 235, 0.5)',
+          borderColor: 'rgb(54, 162, 235)',
+          data: yValuesViews,
+          borderWidth: 2,
+          borderRadius: 5,
         },
-      ]
+      ],
     },
-    options: { 
+    options: {
+      indexAxis: 'y', 
       scales: {
+        y: {
+          stacked: true
+        },
         yAxes: [{
           ticks: {
             stepSize: 1
