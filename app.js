@@ -4,7 +4,7 @@
 
 let allImgs = [];
 let rounds = 0;
-let maxRounds = 3;
+let maxRounds = 25;
 let numOfImgs = 3;
 let imageDiv = document.getElementById('imageDiv');
 let button = document.getElementById('button');
