@@ -4,21 +4,54 @@
 
 let allImgs = [];
 let rounds = 0;
-let maxRounds = 25;
+let maxRounds = 3;
 let numOfImgs = 3;
 let imageDiv = document.getElementById('imageDiv');
 let button = document.getElementById('button');
+let clearButton = document.getElementById('clearButton');
 let results = document.querySelector('ul');
 let insertText = document.getElementById('insertText');
 let compareArray = new Array(numOfImgs);
 let chartArea = document.getElementById('chartArea');
 let firstResult = true;
 
+// Retrieve Stored Data
+
+function getData() {
+  let potentialData = localStorage.getItem('results');
+  console.log('Retrieved Data:', potentialData);
+  if(potentialData) {
+    allImgs = JSON.parse(potentialData);
+  } else {
+    let bag = new Image('bag');
+    let banana = new Image('banana');
+    let bathroom = new Image('bathroom');
+    let boots = new Image('boots');
+    let breakfast = new Image('breakfast');
+    let bubblegum = new Image('bubblegum');
+    let chair = new Image('chair');
+    let cthulhu = new Image('cthulhu');
+    let dogDuck = new Image('dog-duck');
+    let dragon = new Image('dragon');
+    let pen = new Image('pen');
+    let petSweep = new Image('pet-sweep');
+    let scissors = new Image('scissors');
+    let shark = new Image('shark');
+    let sweep = new Image('sweep', '.png');
+    let tauntaun = new Image('tauntaun');
+    let unicorn = new Image('unicorn');
+    let waterCan = new Image('water-can');
+    let wineGlass = new Image('wine-glass');
+  }
+  localStorage.clear();
+}
+getData();
+
 // Constructor Function
 
 function Image(name, fileExt = '.jpeg') {
   this.name = name;
-  this.src = `img/${this.name}${this.fileExt}`;
+  this.src = `img/${this.name}${fileExt}`;
   this.votes = 0;
   this.views = 0;
   this.addToArray = function(){
@@ -26,28 +59,6 @@ function Image(name, fileExt = '.jpeg') {
   }
   this.addToArray();
 }
-
-// Image Inputs
-
-let bag = new Image('bag');
-let banana = new Image('banana');
-let bathroom = new Image('bathroom');
-let boots = new Image('boots');
-let breakfast = new Image('breakfast');
-let bubblegum = new Image('bubblegum');
-let chair = new Image('chair');
-let cthulhu = new Image('cthulhu');
-let dogDuck = new Image('dog-duck');
-let dragon = new Image('dragon');
-let pen = new Image('pen');
-let petSweep = new Image('pet-sweep');
-let scissors = new Image('scissors');
-let shark = new Image('shark');
-let sweep = new Image('sweep', '.png');
-let tauntaun = new Image('tauntaun');
-let unicorn = new Image('unicorn');
-let waterCan = new Image('water-can');
-let wineGlass = new Image('wine-glass');
 
 // Render Function
 
@@ -69,33 +80,20 @@ function render(){
   }
   compareArray = randomNumArray;
   if(rounds < maxRounds - 1) {
-    insertText.innerText = `After ${maxRounds-rounds} more selections, you may use the button below to display the results.`;
+    insertText.innerText = `After ${maxRounds-rounds} more selections, you may use the View Results button below to display the results.`;
   } else if ((maxRounds-rounds) === 1) {
-    insertText.innerText = `After ${maxRounds-rounds} more selection, you may use the button below to display the results.`;
+    insertText.innerText = `After ${maxRounds-rounds} more selection, you may use the View Results button below to display the results.`;
   } else {
-    insertText.innerText = 'You may now use the button below to display the results.';
+    insertText.innerText = 'You may now use the View Results button below to display the results.';
   }
 }
 render();
 
-// Store & Get Data
+// Store Data
 
 function storeData() {
   let stringData = JSON.stringify(allImgs);
   localStorage.setItem('results', stringData);
-}
-
-function getData() {
-  let potentialData = localStorage.getItem('results');
-  if(potentialData) {
-    let parsedData = JSON.parse(potentialData);
-    for (let data of parsedData) {
-      let name = data.name;
-      let src = data.src;
-      let views = data.views;
-      let votes = data.votes;
-    }
-  }
 }
 
 // Voting Event Listener
@@ -117,6 +115,7 @@ let handleClick = function(event){
     image.remove();
   }
   render();
+  storeData();
   if(rounds >= maxRounds){
     button.addEventListener('click', renderResults);
   }
@@ -182,3 +181,18 @@ function renderResults() {
   });
   storeData()
 }
+
+// Clear Data
+
+let handleClearClick = function(event){
+  event.preventDefault();
+  localStorage.clear();
+  allImgs = [];
+  getData();
+  if(rounds >= maxRounds){
+    renderResults();
+  }
+  console.log('Newly cleared storage: ', localStorage.results);
+}
+
+clearButton.addEventListener('click', handleClearClick);
