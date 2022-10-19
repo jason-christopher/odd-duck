@@ -2,9 +2,9 @@
 
 // Global Variables
 
+let allImgs = [];
 let rounds = 0;
 let maxRounds = 25;
-let allImgs = [];
 let numOfImgs = 3;
 let imageDiv = document.getElementById('imageDiv');
 let button = document.getElementById('button');
@@ -18,7 +18,6 @@ let firstResult = true;
 
 function Image(name, fileExt = '.jpeg') {
   this.name = name;
-  this.fileExt = fileExt;
   this.src = `img/${this.name}${this.fileExt}`;
   this.votes = 0;
   this.views = 0;
@@ -77,8 +76,27 @@ function render(){
     insertText.innerText = 'You may now use the button below to display the results.';
   }
 }
-
 render();
+
+// Store & Get Data
+
+function storeData() {
+  let stringData = JSON.stringify(allImgs);
+  localStorage.setItem('results', stringData);
+}
+
+function getData() {
+  let potentialData = localStorage.getItem('results');
+  if(potentialData) {
+    let parsedData = JSON.parse(potentialData);
+    for (let data of parsedData) {
+      let name = data.name;
+      let src = data.src;
+      let views = data.views;
+      let votes = data.votes;
+    }
+  }
+}
 
 // Voting Event Listener
 
@@ -162,4 +180,5 @@ function renderResults() {
       }
     }
   });
+  storeData()
 }
